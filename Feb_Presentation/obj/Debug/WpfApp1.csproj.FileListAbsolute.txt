@@ -1,0 +1,28 @@
+X:\Desktop\IST 331\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config
+X:\Desktop\IST 331\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe
+X:\Desktop\IST 331\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csprojResolveAssemblyReference.cache
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\WpfApp1.g.resources
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.Cache
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
+X:\Desktop\IST 331\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1.g.resources
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.Cache
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+X:\My Documents\Visual Studio 2017\Projects\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csprojResolveAssemblyReference.cache
