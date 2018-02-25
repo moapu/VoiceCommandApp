@@ -34,9 +34,9 @@ namespace HouseFinaceCalculator
 
             // equation
             double totalDownPay = (purchaseValue * percentPay);
-            TotalDownPay_Text.Text = "$ " + totalDownPay;
+            TotalDownPay_Label.Content = "$ " + totalDownPay;
             double leftOverPay = (purchaseValue - totalDownPay);
-            LeftOverPay_Text.Text = "$ " + leftOverPay;
+            LeftOverPay_Label.Content = "$ " + leftOverPay;
            
         }
         private void buttonResetDown_CLick(object sender, RoutedEventArgs e)
@@ -44,8 +44,8 @@ namespace HouseFinaceCalculator
             // Clears String Value
             PurchaseValue_Text.Text = String.Empty;
             PercentPay_Text.Text = String.Empty;
-            TotalDownPay_Text.Text = String.Empty;
-            LeftOverPay_Text.Text = String.Empty;
+            TotalDownPay_Label.Content = String.Empty;
+            LeftOverPay_Label.Content = String.Empty;
         }
 
 		private void Calculate_Button ( object sender, RoutedEventArgs e )
@@ -58,11 +58,38 @@ namespace HouseFinaceCalculator
 			propertyTaxQuantityLabel.Content = "$ " + propertyTaxValue;
 		}
 
-        private void Reset_Button(object sender, RoutedEventArgs e)
+        private void buttonResetPropt_Click(object sender, RoutedEventArgs e)
         {
+            // Clears String Value
             homeValueTextBox.Text = String.Empty;
             AvgTaxRateTextBox.Text = String.Empty;
             propertyTaxQuantityLabel.Content = String.Empty;
+        }
+
+        private void CalculateEstMonthPay_Button(object sender, RoutedEventArgs e)
+        {
+            double Mortgage = Double.Parse(MortgageAmount_Text.Text);
+            MortgageAmount_Text.Text = "$ " + Mortgage;
+            double Apr = Double.Parse(APR_Text.Text) / 100;
+            APR_Text.Text += "%";
+            double loanTerm = Double.Parse(LoanTerm_Text.Text);
+            LoanTerm_Text.Text = loanTerm + "-Years";
+
+            //equation
+            double interest = (Mortgage * Apr);
+            double total = (interest + Mortgage);
+            double totalMonths = loanTerm * 12;
+            double estimateMonthPayment = total / totalMonths;
+            EstimateMonthlyPayLabel.Content = "$ " + estimateMonthPayment;
+        }
+
+        private void buttonResetMortgage_CLick(object sender, RoutedEventArgs e)
+        {
+            // Clears String Value
+            MortgageAmount_Text.Text = String.Empty;
+            APR_Text.Text = String.Empty;
+            LoanTerm_Text.Text = String.Empty;
+            EstimateMonthlyPayLabel.Content = String.Empty;
         }
     }
     
