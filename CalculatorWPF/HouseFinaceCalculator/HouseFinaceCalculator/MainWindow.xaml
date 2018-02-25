@@ -10,9 +10,12 @@
 		Width="829.032">
 	<Grid Margin="0,0,3.4,0">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
+			<ColumnDefinition Width="Auto"
+							  SharedSizeGroup="A" />
+			<ColumnDefinition Width="Auto"
+							  SharedSizeGroup="A" />
+			<ColumnDefinition Width="Auto"
+							  SharedSizeGroup="A" />
 		</Grid.ColumnDefinitions>
 
 		<!--@author: Danny Thlang dzt5175@psu.edu-->
@@ -242,7 +245,7 @@
 				 HorizontalContentAlignment="Center"
 				 FontFamily="Times New Roman"
 				 FontSize="18"
-				 Width="120"/>
+				 Width="120" />
 		<TextBlock x:Name="mortgageAmount"
 				   HorizontalAlignment="Left"
 				   Margin="19,49,0,0"
@@ -268,7 +271,7 @@
 				 HorizontalContentAlignment="Center"
 				 FontFamily="Times New Roman"
 				 FontSize="18"
-				 Width="120"/>
+				 Width="120" />
 		<TextBlock x:Name="textBlock_Copy3"
 				   HorizontalAlignment="Left"
 				   Margin="18,152,0,0"
@@ -286,7 +289,7 @@
 				 HorizontalContentAlignment="Center"
 				 FontFamily="Times New Roman"
 				 FontSize="18"
-				 Width="120"/>
+				 Width="120" />
 		<TextBlock x:Name="EstMonthPay_Text"
 				   HorizontalAlignment="Left"
 				   Margin="16,207,0,0"
