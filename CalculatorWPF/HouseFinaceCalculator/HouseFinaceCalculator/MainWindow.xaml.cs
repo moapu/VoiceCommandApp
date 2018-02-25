@@ -28,9 +28,7 @@ namespace HouseFinaceCalculator
         private void buttonCal_CLick(object sender, RoutedEventArgs e)
         {
             double purchaseValue = Double.Parse(PurchaseValue_Text.Text);
-            PurchaseValue_Text.Text = "$ " + purchaseValue;
             double percentPay = Double.Parse(PercentPay_Text.Text) / 100;
-            PercentPay_Text.Text += "%";
 
             // equation
             double totalDownPay = (purchaseValue * percentPay);
@@ -69,11 +67,8 @@ namespace HouseFinaceCalculator
         private void CalculateEstMonthPay_Button(object sender, RoutedEventArgs e)
         {
             double Mortgage = Double.Parse(MortgageAmount_Text.Text);
-            MortgageAmount_Text.Text = "$ " + Mortgage;
             double Apr = Double.Parse(APR_Text.Text) / 100;
-            APR_Text.Text += "%";
             double loanTerm = Double.Parse(LoanTerm_Text.Text);
-            LoanTerm_Text.Text = loanTerm + "-Years";
 
             //equation
             double interest = (Mortgage * Apr);

@@ -6,8 +6,8 @@
 		xmlns:local="clr-namespace:HouseFinaceCalculator"
 		mc:Ignorable="d"
 		Title="House Finace Calculator"
-		Height="556.389"
-		Width="829.032">
+		Height="430"
+		Width="815">
 	<Grid Margin="0,0,3.4,0"
 		  Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
 		<Grid.ColumnDefinitions>
@@ -58,7 +58,8 @@
 			   Foreground="#FFF01010"
 			   FontSize="25"
 			   Width="204"
-			   Content="$ 0.00">
+			   Content="$ 0.00"
+			   FontFamily="Times New Roman">
 
 		</Label>
 		<Label x:Name="LeftOverPay_Label"
@@ -68,6 +69,7 @@
 			   Height="48"
 			   Margin="10,290,0,0"
 			   VerticalAlignment="Top"
+			   FontFamily="Times New Roman"
 			   Foreground="#FFF01010"
 			   Width="204"
 			   FontSize="25">
@@ -327,6 +329,43 @@
 				VerticalAlignment="Top"
 				Width="90"
 				FontFamily="High Tower Text" />
+		<Label x:Name="div_1"
+			   Content=""
+			   HorizontalAlignment="Left"
+			   Margin="260,0,0,0"
+			   VerticalAlignment="Top"
+			   RenderTransformOrigin="0.737,-4.077"
+			   Height="525"
+			   Width="2"
+			   Background="LightSlateGray" />
+		<Label x:Name="div_2"
+			   Content=""
+			   HorizontalAlignment="Left"
+			   Margin="267,0,0,0"
+			   VerticalAlignment="Top"
+			   RenderTransformOrigin="0.737,-4.077"
+			   Height="525"
+			   Width="2"
+			   Background="LightSlateGray"
+			   Grid.Column="1" />
+		<Label x:Name="div_3"
+			   Content=""
+			   HorizontalAlignment="Left"
+			   Margin="-3272,3313,0,-3716"
+			   VerticalAlignment="Top"
+			   RenderTransformOrigin="0.737,-4.077"
+			   Height="802"
+			   Width="2"
+			   Background="LightSlateGray">
+			<Label.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform />
+					<SkewTransform />
+					<RotateTransform Angle="-90" />
+					<TranslateTransform />
+				</TransformGroup>
+			</Label.RenderTransform>
+		</Label>
 		<!-- ^^@author: Danny Thlang dzt5175@psu.edu^^ -->
 
 	</Grid>
