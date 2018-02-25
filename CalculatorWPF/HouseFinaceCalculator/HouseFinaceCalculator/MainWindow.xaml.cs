@@ -27,8 +27,25 @@ namespace HouseFinaceCalculator
 
         private void buttonCal_CLick(object sender, RoutedEventArgs e)
         {
-            textBoxDisplay2.Text = (Double.Parse(textBoxDisplay1.Text) * Double.Parse(textBoxDisplay.Text)).ToString();
-            textBoxDisplay3.Text = (Double.Parse(textBoxDisplay.Text) - Double.Parse(textBoxDisplay2.Text)).ToString();
+            double purchaseValue = Double.Parse(PurchaseValue_Text.Text);
+            PurchaseValue_Text.Text = "$ " + purchaseValue;
+            double percentPay = Double.Parse(PercentPay_Text.Text) / 100;
+            PercentPay_Text.Text += "%";
+
+            // equation
+            double totalDownPay = (purchaseValue * percentPay);
+            TotalDownPay_Text.Text = "$ " + totalDownPay;
+            double leftOverPay = (purchaseValue - totalDownPay);
+            LeftOverPay_Text.Text = "$ " + leftOverPay;
+           
+        }
+        private void buttonResetDown_CLick(object sender, RoutedEventArgs e)
+        {
+            // Clears String Value
+            PurchaseValue_Text.Text = String.Empty;
+            PercentPay_Text.Text = String.Empty;
+            TotalDownPay_Text.Text = String.Empty;
+            LeftOverPay_Text.Text = String.Empty;
         }
 
 		private void Calculate_Button ( object sender, RoutedEventArgs e )
@@ -40,6 +57,13 @@ namespace HouseFinaceCalculator
 			double propertyTaxValue = (homeValue * avgTaxRate) / 100;
 			propertyTaxQuantityLabel.Content = "$ " + propertyTaxValue;
 		}
-	}
+
+        private void Reset_Button(object sender, RoutedEventArgs e)
+        {
+            homeValueTextBox.Text = String.Empty;
+            AvgTaxRateTextBox.Text = String.Empty;
+            propertyTaxQuantityLabel.Content = String.Empty;
+        }
+    }
     
 }

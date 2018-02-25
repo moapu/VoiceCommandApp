@@ -8,113 +8,128 @@
 		Title="House Finace Calculator"
 		Height="556.389"
 		Width="829.032">
-	<Grid Margin="0,0,3.4,0">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-		</Grid.ColumnDefinitions>
-		<Button x:Name="Calculate"
+    <Grid Margin="0,0,3.4,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--@author: Danny Thlang dzt5175@psu.edu-->
+        <Button x:Name="Calculate"
 				Grid.Column="1"
 				Content="CALCULATE"
 				Click="buttonCal_CLick"
 				HorizontalAlignment="Left"
-				Margin="19.2,285,0,0"
+				Margin="19.2,169,0,0"
 				VerticalAlignment="Top"
-				Width="157">
-		</Button>
-		<TextBox x:Name="textBoxDisplay"
+				Width="131" Height="31" FontFamily="High Tower Text" FontWeight="Bold"/>
+        <TextBox x:Name="PurchaseValue_Text"
 				 Grid.Column="1"
 				 HorizontalAlignment="Left"
 				 Height="23"
-				 Margin="18.2,84,0,0"
+				 Margin="19.2,71,0,0"
 				 TextWrapping="Wrap"
 				 VerticalAlignment="Top"
 				 Width="120" />
-		<TextBox x:Name="textBoxDisplay1"
-				 Grid.Column="1"
+        <TextBox x:Name="PercentPay_Text"
+                 Text=""
+                 Grid.Column="1"
 				 HorizontalAlignment="Left"
 				 Height="23"
-				 Margin="17.2,201,0,0"
+				 Margin="20.2,129,0,0"
 				 TextWrapping="Wrap"
 				 VerticalAlignment="Top"
 				 Width="120" />
-		<TextBox x:Name="textBoxDisplay2"
+        <TextBox x:Name="TotalDownPay_Text" 
 				 Grid.Column="1"
 				 HorizontalAlignment="Left"
-				 Height="23"
-				 Margin="17.6,378,0,0"
+				 Height="48"
+				 Margin="15.2,256,0,0"
 				 TextWrapping="Wrap"
 				 VerticalAlignment="Top"
-				 Width="190"
-				 RenderTransformOrigin="0.5,0.5">
-			<TextBox.RenderTransform>
-				<TransformGroup>
-					<ScaleTransform />
-					<SkewTransform />
-					<RotateTransform Angle="0.256" />
-					<TranslateTransform />
-				</TransformGroup>
-			</TextBox.RenderTransform>
-		</TextBox>
-		<TextBox x:Name="textBoxDisplay3"
+                  Foreground="#FFF01010"                 FontSize="25"
+
+				 Width="204"
+				 RenderTransformOrigin="0.5,0.5" Text="">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.256" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="LeftOverPay_Text" Text=""
 				 Grid.Column="1"
 				 HorizontalAlignment="Left"
-				 Height="23"
-				 Margin="17.6,446,0,0"
+				 Height="48"
+				 Margin="17.2,348,0,0"
 				 TextWrapping="Wrap"
 				 VerticalAlignment="Top"
-				 Width="190"
+                  Foreground="#FFF01010"
+				 Width="193"
+                 FontSize="25"
 				 RenderTransformOrigin="0.5,0.5">
-			<TextBox.RenderTransform>
-				<TransformGroup>
-					<ScaleTransform />
-					<SkewTransform />
-					<RotateTransform Angle="0.256" />
-					<TranslateTransform />
-				</TransformGroup>
-			</TextBox.RenderTransform>
-		</TextBox>
-		<TextBlock x:Name="textBlock"
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform Angle="0.256" />
+                    <TranslateTransform />
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBlock x:Name="textBlock"
 				   Grid.Column="1"
 				   HorizontalAlignment="Left"
-				   Margin="18.2,63,0,0"
+				   Margin="19.2,45,0,0"
 				   TextWrapping="Wrap"
 				   Text="Purchase Value:"
-				   VerticalAlignment="Top" />
-		<TextBlock x:Name="textBlock_Copy"
+				   VerticalAlignment="Top" FontSize="18" FontFamily="High Tower Text" />
+        <TextBlock x:Name="textBlock_Copy"
 				   Grid.Column="1"
 				   HorizontalAlignment="Left"
-				   Margin="17.2,180,0,0"
+				   Margin="17.2,103,0,0"
 				   TextWrapping="Wrap"
 				   Text="Percentage of Pay:"
-				   VerticalAlignment="Top" />
-		<TextBlock x:Name="textBlock_Copy1"
+				   VerticalAlignment="Top" FontSize="18" FontFamily="High Tower Text" />
+        <TextBlock x:Name="textBlock_Copy1"
 				   Grid.Column="1"
 				   HorizontalAlignment="Left"
-				   Margin="17.6,359,0,0"
+				   Margin="10.2,220,0,0"
 				   TextWrapping="Wrap"
-				   VerticalAlignment="Top"><Run FontWeight="Bold"
+				   VerticalAlignment="Top" FontFamily="High Tower Text" FontSize="18"><Run FontWeight="Bold"
 												Text="Total Down-Payment:" /></TextBlock>
-		<TextBlock x:Name="textBlock_Copy2"
+        <TextBlock x:Name="textBlock_Copy2"
 				   Grid.Column="1"
 				   HorizontalAlignment="Left"
-				   Margin="17.6,428,0,0"
+				   Margin="10.2,312,0,0"
 				   TextWrapping="Wrap"
-				   VerticalAlignment="Top"><Run FontWeight="Bold"
+				   VerticalAlignment="Top" FontFamily="High Tower Text" FontSize="18"><Run FontWeight="Bold"
 												Text="Leftover Payment:" /></TextBlock>
-		<Label x:Name="downPaymentLabel"
+        <Button x:Name="ResetDownPay_button"
+            Grid.Column="1"
+            Content="Reset"
+            Click="buttonResetDown_CLick"
+            HorizontalAlignment="Left"
+            Margin="20.2,422,0,0"
+            VerticalAlignment="Top"
+            Width="76" Height="20" FontFamily="High Tower Text"/>
+
+        <Label x:Name="downPaymentLabel"
 			   Content="Down-Payment"
 			   Grid.Column="1"
 			   VerticalAlignment="Top"
 			   HorizontalContentAlignment="Center"
 			   HorizontalAlignment="Center"
-			   FontFamily="Trebuchet MS"
-			   FontSize="20"
-			   Width="150"
-			   FontWeight="Bold" />
-		<!-- @author: mja5612@psu.edu -->
-		<Label x:Name="propertyTaxTitle"
+			   FontFamily="High Tower Text"
+			   FontSize="25"
+			   Width="201"
+			   FontWeight="Bold" Margin="39.2,0,33.4,0" />
+        <!-- ^^@author: Danny Thlang dzt5175@psu.edu^^ -->
+        <!-- @author: mja5612@psu.edu -->
+        <Label x:Name="propertyTaxTitle"
 			   Content="Property Tax"
 			   Grid.Column="2"
 			   VerticalAlignment="Top"
@@ -124,7 +139,7 @@
 			   FontSize="25"
 			   Width="155"
 			   FontWeight="Bold" />
-		<Label x:Name="homeValueLabel"
+        <Label x:Name="homeValueLabel"
 			   Content="Home Value :"
 			   Grid.Column="2"
 			   VerticalAlignment="Top"
@@ -134,7 +149,7 @@
 			   FontSize="18"
 			   Width="118"
 			   Margin="13,40,142,0" />
-		<TextBox x:Name="homeValueTextBox"
+        <TextBox x:Name="homeValueTextBox"
 				 Grid.Column="2"
 				 VerticalAlignment="Top"
 				 HorizontalContentAlignment="Center"
@@ -143,7 +158,7 @@
 				 FontSize="18"
 				 Width="125"
 				 Margin="17,67,126,0" />
-		<Label x:Name="AvgTaxRateLabel"
+        <Label x:Name="AvgTaxRateLabel"
 			   Content="Avg. Tax Rate :"
 			   Grid.Column="2"
 			   VerticalAlignment="Top"
@@ -153,7 +168,7 @@
 			   FontSize="18"
 			   Width="131"
 			   Margin="13,93,129,0" />
-		<TextBox x:Name="AvgTaxRateTextBox"
+        <TextBox x:Name="AvgTaxRateTextBox"
 				 Grid.Column="2"
 				 VerticalAlignment="Top"
 				 HorizontalContentAlignment="Center"
@@ -162,7 +177,7 @@
 				 FontSize="18"
 				 Width="125"
 				 Margin="17,119,124,0" />
-		<Label x:Name="propertyTaxLabel"
+        <Label x:Name="propertyTaxLabel"
 			   Content="Property Tax : "
 			   Grid.Column="2"
 			   VerticalAlignment="Top"
@@ -173,7 +188,7 @@
 			   FontSize="18"
 			   Width="131"
 			   Margin="7,151,135,0" />
-		<Label x:Name="propertyTaxQuantityLabel"
+        <Label x:Name="propertyTaxQuantityLabel"
 			   Content=""
 			   Grid.Column="2"
 			   VerticalAlignment="Top"
@@ -185,7 +200,7 @@
 			   Margin="136,147,6,0"
 			   Foreground="#FFF01010"
 			   Height="41" />
-		<Button Content="CALCULATE"
+        <Button Content="CALCULATE"
 				Grid.Column="2"
 				HorizontalContentAlignment="Center"
 				FontFamily="High Tower Text"
@@ -194,7 +209,16 @@
 				VerticalAlignment="Top"
 				Width="90"
 				Click="Calculate_Button" />
+        <Button Content="Reset"
+            Grid.Column="2"
+            HorizontalContentAlignment="Center"
+            FontFamily="High Tower Text"
+            HorizontalAlignment="Left"
+            Margin="16.6,240,0,0"
+            VerticalAlignment="Top"
+            Width="90"
+            Click="Reset_Button" />
 
-		<!-- ^^@author: mja5612@psu.edu^^ -->
-	</Grid>
+        <!-- ^^@author: mja5612@psu.edu^^ -->
+    </Grid>
 </Window>
