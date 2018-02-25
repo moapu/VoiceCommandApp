@@ -8,7 +8,8 @@
 		Title="House Finace Calculator"
 		Height="556.389"
 		Width="829.032">
-	<Grid Margin="0,0,3.4,0">
+	<Grid Margin="0,0,3.4,0"
+		  Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="Auto"
 							  SharedSizeGroup="A" />
@@ -57,11 +58,11 @@
 			   Foreground="#FFF01010"
 			   FontSize="25"
 			   Width="204"
-			   Content="">
+			   Content="$ 0.00">
 
 		</Label>
 		<Label x:Name="LeftOverPay_Label"
-			   Content=""
+			   Content="$ 0.00"
 			   Grid.Column="1"
 			   HorizontalAlignment="Left"
 			   Height="48"
@@ -193,7 +194,7 @@
 			   Width="131"
 			   Margin="13,148,129,0" />
 		<Label x:Name="propertyTaxQuantityLabel"
-			   Content=""
+			   Content="$ 0.00"
 			   Grid.Column="2"
 			   VerticalAlignment="Top"
 			   HorizontalContentAlignment="Left"
@@ -308,7 +309,7 @@
 				Width="90"
 				Click="CalculateEstMonthPay_Button" />
 		<Label x:Name="EstimateMonthlyPayLabel"
-			   Content=""
+			   Content="$ 0.00"
 			   VerticalAlignment="Top"
 			   HorizontalContentAlignment="Left"
 			   HorizontalAlignment="Center"
