@@ -91,6 +91,11 @@ namespace HouseFinaceCalculator
             LoanTerm_Text.Text = String.Empty;
             EstimateMonthlyPayLabel.Content = String.Empty;
         }
-    }
+
+		private void PercentPay_Text_TextChanged ( object sender, TextChangedEventArgs e )
+		{
+
+		}
+	}
     
 }
