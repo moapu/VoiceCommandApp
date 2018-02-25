@@ -30,6 +30,16 @@ namespace HouseFinaceCalculator
             textBoxDisplay2.Text = (Double.Parse(textBoxDisplay1.Text) * Double.Parse(textBoxDisplay.Text)).ToString();
             textBoxDisplay3.Text = (Double.Parse(textBoxDisplay.Text) - Double.Parse(textBoxDisplay2.Text)).ToString();
         }
-    }
+
+		private void Calculate_Button ( object sender, RoutedEventArgs e )
+		{
+			double homeValue = Double.Parse(homeValueTextBox.Text);
+			double avgTaxRate = Double.Parse(AvgTaxRateTextBox.Text);
+
+			// equation
+			double propertyTaxValue = (homeValue * avgTaxRate) / 100;
+			propertyTaxQuantityLabel.Content = "$ " + propertyTaxValue;
+		}
+	}
     
 }
