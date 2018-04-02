@@ -8,72 +8,95 @@
 		Title="MainWindow"
 		Height="350"
 		Width="525"
-		Loaded="WindowLoaded">
+		Loaded="WindowLoaded"
+		ResizeMode="NoResize">
 	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="250" />
+			<RowDefinition Height="40" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
 		<Image x:Name="image1"
 			   HorizontalAlignment="Left"
-			   Height="99"
-			   Margin="219,10,0,0"
+			   Height="252"
+			   Margin="9,0,0,0"
 			   VerticalAlignment="Top"
-			   Width="137" />
+			   Width="240"
+			   Grid.Row="0"
+			   Grid.Column="0" />
 		<Image x:Name="capturedImage"
-			   HorizontalAlignment="Left"
-			   Height="99"
-			   Margin="361,10,0,0"
+			   HorizontalAlignment="Right"
+			   Height="252"
+			   Margin="0,0,9,0"
 			   VerticalAlignment="Top"
-			   Width="147" />
-		<Button Content="Clear"
-				HorizontalAlignment="Left"
-				Margin="432,154,0,0"
-				VerticalAlignment="Top"
-				Width="75"
-				Click="Clear_Button_Click" />
-		<Button Content="Snapshot"
-				HorizontalAlignment="Left"
-				Margin="261,128,0,0"
-				VerticalAlignment="Top"
-				Width="75"
-				Click="Button_Click_1" />
-		<Button Content="Tilt"
-				HorizontalAlignment="Left"
-				Margin="256,191,0,0"
-				VerticalAlignment="Top"
-				Width="75"
-				Click="Button_Click_2" />
-		<TextBox Name="txtTilt"
-				 HorizontalAlignment="Left"
-				 Height="23"
-				 Margin="236,163,0,0"
-				 TextWrapping="Wrap"
-				 VerticalAlignment="Top"
-				 Width="120" />
+			   Width="240"
+			   Grid.Row="0"
+			   Grid.Column="1" />
 		<Button Content="Enable"
 				HorizontalAlignment="Left"
-				Margin="10,149,0,0"
-				VerticalAlignment="Top"
+				Margin="10,0,0,-7"
+				VerticalAlignment="Bottom"
 				Width="75"
 				Click="btnEnable_Click"
-				Name="btnEnable" />
+				Name="btnEnable"
+				Grid.Row="1"
+				Height="20" />
 		<Button Content="Disable"
-				HorizontalAlignment="Left"
-				Margin="122,149,0,0"
-				VerticalAlignment="Top"
+				HorizontalAlignment="Right"
+				Margin="0,0,7,-7"
+				VerticalAlignment="Bottom"
 				Width="75"
 				Name="btnDisable"
 				IsEnabled="False"
-				Click="btnDisable_Click" />
-		<RichTextBox HorizontalAlignment="Left"
-					 Height="126"
-					 Margin="10,10,0,0"
-					 VerticalAlignment="Top"
-					 Width="187"
-					 Name="richTextBox">
-			<FlowDocument>
-				<Paragraph>
-					<Run Text="- Log - " />
-				</Paragraph>
-			</FlowDocument>
-		</RichTextBox>
+				Click="btnDisable_Click"
+				Grid.Row="1"
+				Height="20" />
+		<!--<Button Content="Snapshot"
+				HorizontalAlignment="Left"
+				Margin="52,17,0,0"
+				VerticalAlignment="Top"
+				Width="75"
+				Click="Button_Click_1"
+				Grid.Row="1"
+				Grid.Column="0" />-->
+		<!--<Button Content="Clear"
+				HorizontalAlignment="Center"
+				Margin="45,87,52,44"
+				VerticalAlignment="Center"
+				Width="75"
+				Click="Clear_Button_Click"
+				Grid.Row="1"
+				Grid.Column="1"/>-->
+		<Button Content="Tilt"
+				HorizontalAlignment="Right"
+				Margin="0,0,2,-7"
+				VerticalAlignment="Bottom"
+				Width="75"
+				Click="Button_Click_2"
+				Grid.Row="1"
+				Grid.Column="1" />
+		<TextBox Name="txtTilt"
+				 HorizontalAlignment="Left"
+				 Height="20"
+				 Margin="94,0,0,-7"
+				 TextWrapping="Wrap"
+				 VerticalAlignment="Bottom"
+				 Width="75"
+				 Grid.Row="1"
+				 Grid.Column="1"
+				 BorderBrush="AliceBlue" />
+		<Label Content="Avaiable Angles for voice command: (0, 10, 20, 27)"
+			   HorizontalAlignment="Left"
+			   Margin="0,2,0,0"
+			   Grid.Row="1"
+			   VerticalAlignment="Top"
+			   Width="292"
+			   Grid.ColumnSpan="2"
+			   Foreground="#FF0EABE6"
+			   FontFamily="Segoe UI Semibold" />
 
 	</Grid>
 </Window>

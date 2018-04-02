@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Speech.Recognition;
-using Microsoft.Kinect;
+﻿using Microsoft.Kinect;
+using System;
 using System.Globalization;
 using System.IO;
-using System.Threading;
+using System.Speech.Recognition;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace MySpeechRecognition
 {
@@ -34,6 +23,11 @@ namespace MySpeechRecognition
 		private void btnEnable_Click ( object sender, RoutedEventArgs e )
 		{
 			recEngine.RecognizeAsync(RecognizeMode.Multiple);
+			buttonEnable();
+		}
+
+		private void buttonEnable ()
+		{
 			btnDisable.IsEnabled = true;
 			btnEnable.IsEnabled = false;
 		}
@@ -41,7 +35,17 @@ namespace MySpeechRecognition
 		private void WindowLoaded ( object sender, RoutedEventArgs e )
 		{
 			Choices commands = new Choices();
-			commands.Add(new string[] { "say hello", "print my name", "take a picture" });
+			commands.Add(new string[]
+				{
+					"Enable",
+					"Disable",
+					"clear",
+					"Tilt 0 degree",
+					"Tilt 10 degree",
+					"Tilt 20 degree",
+					"Tilt 27 degree",
+					"take a picture"
+				});
 			GrammarBuilder gb = new GrammarBuilder();
 			gb.Append(commands);
 			Grammar grammer = new Grammar(gb);
@@ -49,6 +53,7 @@ namespace MySpeechRecognition
 			recEngine.LoadGrammarAsync(grammer);
 			recEngine.SetInputToDefaultAudioDevice();
 			recEngine.SpeechRecognized += recEngine_SpeechRecognized;
+			recEngine.RecognizeAsync(RecognizeMode.Multiple);
 
 			Window_Loaded_Kinect();
 		}
@@ -57,11 +62,26 @@ namespace MySpeechRecognition
 		{
 			switch ( e.Result.Text )
 			{
-				case "say hello":
-					MessageBox.Show("Hello Apu, How are you?");
+				case "Enable":
+					buttonEnable();
 					break;
-				case "print my name":
-					richTextBox.AppendText("\nApu");
+				case "Disable":
+					buttonDisable();
+					break;
+				case "Tilt 10 degree":
+					_sensor.ElevationAngle = Convert.ToInt32("10");
+					break;
+				case "Tilt 0 degree":
+					_sensor.ElevationAngle = Convert.ToInt32("0");
+					break;
+				case "Tilt 27 degree":
+					_sensor.ElevationAngle = Convert.ToInt32("27");
+					break;
+				case "Tilt 20 degree":
+					_sensor.ElevationAngle = Convert.ToInt32("20");
+					break;
+				case "clear":
+					ClearCapturedImage();
 					break;
 				case "take a picture":
 					TakePicture();
@@ -70,6 +90,11 @@ namespace MySpeechRecognition
 		}
 
 		private void btnDisable_Click ( object sender, RoutedEventArgs e )
+		{
+			buttonDisable();
+		}
+
+		private void buttonDisable ()
 		{
 			recEngine.RecognizeAsyncStop();
 			btnEnable.IsEnabled = true;
@@ -192,8 +217,12 @@ namespace MySpeechRecognition
 
 		private void Clear_Button_Click ( object sender, RoutedEventArgs e )
 		{
-			capturedImage.Source = null;
+			ClearCapturedImage();
 		}
 
+		private void ClearCapturedImage ()
+		{
+			capturedImage.Source = null;
+		}
 	}
 }
