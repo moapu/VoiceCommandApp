@@ -6,11 +6,14 @@ using System.Speech.Recognition;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Media;
+
 
 namespace MySpeechRecognition
 {
 	public partial class MainWindow : Window
 	{
+      
 		SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
 		KinectSensor _sensor;
 		WriteableBitmap colorBitmap;
@@ -35,17 +38,22 @@ namespace MySpeechRecognition
 		private void WindowLoaded ( object sender, RoutedEventArgs e )
 		{
 			Choices commands = new Choices();
-			commands.Add(new string[]
-				{
-					"Enable",
-					"Disable",
-					"clear",
-					"Tilt 0 degree",
-					"Tilt 10 degree",
-					"Tilt 20 degree",
-					"Tilt 27 degree",
-					"take a picture"
-				});
+            commands.Add(new string[]
+                {
+                    "Enable",
+                    "Disable",
+                    "clear",
+                    "Tilt 0 degree",
+                    "Tilt 10 degree",
+                    "Tilt 20 degree",
+                    "Tilt 27 degree",
+                    "take a picture",
+                    "Weather",
+                    "Close",
+                    "Play something cool",
+                    "Stop",
+                    "Play something sweet"
+                });
 			GrammarBuilder gb = new GrammarBuilder();
 			gb.Append(commands);
 			Grammar grammer = new Grammar(gb);
@@ -86,7 +94,23 @@ namespace MySpeechRecognition
 				case "take a picture":
 					TakePicture();
 					break;
-			}
+                case "Weather":
+                    GetWeather();
+                    break;
+                case "Close":
+                    GetClose();
+                    break;
+                case "Play something cool":
+                    Play();
+                    break;
+                case "Stop":
+                    Stop();
+                    break;
+                case "Play something sweet":
+                    Play2();
+                    break;
+
+            }
 		}
 
 		private void btnDisable_Click ( object sender, RoutedEventArgs e )
@@ -200,11 +224,13 @@ namespace MySpeechRecognition
 			var uri = new Uri(path);
 			var bitmap = new BitmapImage(uri);
 			capturedImage.Source = bitmap;
+            MessageBox.Show("Wow, You Are Looking Good!!!");
+           
 		}
 
 		private void Button_Click_2 ( object sender, RoutedEventArgs e )
 		{
-			//makes sure the value is < 27 && > -27
+			// makes sure the value is < 27 && > -27
 			if ( txtTilt.Text != string.Empty )
 			{
 				int txtTiltValue = int.Parse(txtTilt.Text);
@@ -214,7 +240,29 @@ namespace MySpeechRecognition
 				}
 			}
 		}
-
+        private void GetWeather()
+        {
+            // Open a hyperlink to the WeatherWebsite
+            System.Diagnostics.Process.Start("https://weather.com/weather/today/l/USPA0003:1:US");
+        }
+        void Play()
+        {
+            Music.Play();
+        }
+        void Play2()
+        {
+            Music2.Play();
+        }
+        void Stop()
+        {
+            Music.Stop();
+            Music2.Stop();
+        }
+        private void GetClose()
+        {
+            //Exits out the Application
+            System.Windows.Application.Current.Shutdown();
+        }
 		private void Clear_Button_Click ( object sender, RoutedEventArgs e )
 		{
 			ClearCapturedImage();
@@ -224,5 +272,6 @@ namespace MySpeechRecognition
 		{
 			capturedImage.Source = null;
 		}
+    
 	}
 }
