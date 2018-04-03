@@ -35,8 +35,13 @@ namespace MySpeechRecognition
 
 		private void btnEnable_Click ( object sender, RoutedEventArgs e )
 		{
-			recEngine.RecognizeAsync(RecognizeMode.Multiple);
-			buttonEnable();
+            /* This method was deleted.
+             * "recEngine.RecognizeAsync(RecognizeMode.Multiple);"
+             * Now the button doesn't have any functionality 
+             * Does not affect voice recognition. 
+             */
+
+            buttonEnable();
 		}
 
 		private void buttonEnable ()
@@ -71,8 +76,10 @@ namespace MySpeechRecognition
 			recEngine.LoadGrammarAsync(grammer);
 			recEngine.SetInputToDefaultAudioDevice();
 			recEngine.SpeechRecognized += recEngine_SpeechRecognized;
+            //Readded this method for voice recognition when started
+            recEngine.RecognizeAsync(RecognizeMode.Multiple);
 
-			Window_Loaded_Kinect();
+            Window_Loaded_Kinect();
 		}
 
 		private void recEngine_SpeechRecognized ( object sender, SpeechRecognizedEventArgs e )
@@ -124,12 +131,18 @@ namespace MySpeechRecognition
 
 		private void btnDisable_Click ( object sender, RoutedEventArgs e )
 		{
-			buttonDisable();
+            /* This method was deleted.
+            * "recEngine.RecognizeStop();"
+            * Now the button doesn't have any functionality.
+            * Does not affect voice recognition. 
+            */
+
+            buttonDisable();
 		}
 
 		private void buttonDisable ()
 		{
-			recEngine.RecognizeAsyncStop();
+			
 			btnEnable.IsEnabled = true;
 			btnDisable.IsEnabled = false;
 		}
