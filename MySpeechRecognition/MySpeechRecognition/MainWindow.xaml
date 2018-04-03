@@ -99,10 +99,10 @@
 			   FontFamily="Segoe UI Semibold" />
         <MediaElement Name ="Music"
                       LoadedBehavior="Manual"
-                      Source="C:\Users\danny\Documents\GitHub\Feb_Presentation\MySpeechRecognition\Sample Music\Kalimba.mp3"/>
+                      Source="C:\GitHub\Kalimba.mp3"/>
         <MediaElement Name ="Music2"
                       LoadedBehavior="Manual"
-                      Source="C:\Users\danny\Documents\GitHub\Feb_Presentation\MySpeechRecognition\Sample Music\Maid with the Flaxen Hair.mp3"/>
+                      Source="C:\GitHub\Maid with the Flaxen Hair.mp3"/>
 
 
     </Grid>
