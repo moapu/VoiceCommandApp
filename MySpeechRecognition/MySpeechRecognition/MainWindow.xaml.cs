@@ -7,6 +7,16 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Media;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 
 namespace MySpeechRecognition
@@ -61,7 +71,6 @@ namespace MySpeechRecognition
 			recEngine.LoadGrammarAsync(grammer);
 			recEngine.SetInputToDefaultAudioDevice();
 			recEngine.SpeechRecognized += recEngine_SpeechRecognized;
-			recEngine.RecognizeAsync(RecognizeMode.Multiple);
 
 			Window_Loaded_Kinect();
 		}
@@ -122,6 +131,7 @@ namespace MySpeechRecognition
 		{
 			recEngine.RecognizeAsyncStop();
 			btnEnable.IsEnabled = true;
+			btnDisable.IsEnabled = false;
 		}
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -247,8 +257,8 @@ namespace MySpeechRecognition
         }
         void Play()
         {
-            Music.Play();
-        }
+			Music.Play();
+		}
         void Play2()
         {
             Music2.Play();

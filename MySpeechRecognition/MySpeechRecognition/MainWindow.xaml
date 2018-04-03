@@ -87,7 +87,7 @@
 				 Width="75"
 				 Grid.Row="1"
 				 Grid.Column="1"
-				 BorderBrush="AliceBlue" />
+				 BorderBrush="#FF1284E8" />
 		<Label Content="Avaiable Angles for voice command: (0, 10, 20, 27)"
 			   HorizontalAlignment="Left"
 			   Margin="0,2,0,0"
@@ -99,10 +99,10 @@
 			   FontFamily="Segoe UI Semibold" />
         <MediaElement Name ="Music"
                       LoadedBehavior="Manual"
-                      Source="C:\GitHub\Kalimba.mp3"/>
+					  Source="H:\Desktop\Courses\331\Presentations\MySpeechRecognition\Sample Music/Kalimba.mp3"/>
         <MediaElement Name ="Music2"
                       LoadedBehavior="Manual"
-                      Source="C:\GitHub\Maid with the Flaxen Hair.mp3"/>
+					  Source="H:\Desktop\Courses\331\Presentations\MySpeechRecognition\Sample Music\Maid with the Flaxen Hair.mp3"/>
 
 
     </Grid>
