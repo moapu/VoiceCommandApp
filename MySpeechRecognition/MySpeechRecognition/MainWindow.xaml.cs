@@ -50,7 +50,6 @@ namespace MySpeechRecognition
 			Choices commands = new Choices();
             commands.Add(new string[]
                 {
-                    "Enable",
                     "Disable",
                     "clear",
                     "Tilt 0 degree",
@@ -78,9 +77,6 @@ namespace MySpeechRecognition
 		{
 			switch ( e.Result.Text )
 			{
-				case "Enable":
-					buttonEnable();
-					break;
 				case "Disable":
 					buttonDisable();
 					break;
@@ -123,15 +119,12 @@ namespace MySpeechRecognition
 
 		private void btnDisable_Click ( object sender, RoutedEventArgs e )
 		{
-
-            recEngine.RecognizeAsyncStop();
-
             buttonDisable();
 		}
 
 		private void buttonDisable ()
 		{
-			
+			recEngine.RecognizeAsyncStop();
 			btnEnable.IsEnabled = true;
 			btnDisable.IsEnabled = false;
 		}
