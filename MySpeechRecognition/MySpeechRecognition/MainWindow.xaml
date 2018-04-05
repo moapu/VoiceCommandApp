@@ -10,11 +10,11 @@
 		Width="525"
 		Loaded="WindowLoaded"
 		ResizeMode="NoResize">
-    
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="pictures/photo2.jpg">
-                </ImageBrush>
+            </ImageBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
